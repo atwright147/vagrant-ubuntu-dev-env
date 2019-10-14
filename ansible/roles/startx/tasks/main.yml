@@ -1,0 +1,2 @@
+- name: Run startx
+  shell: exec startx -- -keeptty &> /dev/null

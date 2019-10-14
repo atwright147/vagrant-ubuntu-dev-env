@@ -1,0 +1,17 @@
+---
+- name: Install zsh
+  become: yes
+  apt: pkg=zsh state=latest
+
+- name: Add group admins
+  become: yes 
+  group: name=admins system=yes state=present
+
+- name: Add group developers
+  become: yes 
+  group: name=developers system=no state=present
+
+- name: Add user Andy
+  become: yes 
+  user: name=andy shell=/bin/zsh groups=admins,developers append=yes
+  

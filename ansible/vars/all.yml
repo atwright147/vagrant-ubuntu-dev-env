@@ -1,0 +1,12 @@
+---
+server:
+    install: '1'
+    # packages: [qemu-kvm, libvirt-bin, virtinst, bridge-utils, cpu-checker]
+    timezone: UTC
+    locale: en_GB.UTF-8
+vagrant_local:
+    install: '1'
+    vm: { base_box: bionic64, hostname: "kvm-controller", ip: 192.168.55.11, memory: 1536, sharedfolder: ./, useVagrantCloud: '1', syncType: nfs }
+
+nodejs_version: "8.x"
+nodejs_npm_global_packages: ["kill-port"]

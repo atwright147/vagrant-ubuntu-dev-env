@@ -1,0 +1,30 @@
+---
+- name: Create vagrant folder
+  file:
+    path: /vagrant
+    state: directory
+    mode: 0777
+
+- name: Add .ssh directory
+  file:
+    path=/home/vagrant/.ssh
+    state=directory
+    mode=0700
+    owner=vagrant
+    group=vagrant
+
+- name: SSH private key
+  copy:
+    src=~/.ssh/vagrant/id_rsa
+    dest=/home/vagrant/.ssh/
+    owner=vagrant
+    group=vagrant
+    mode=0600
+
+- name: SSH public key
+  copy:
+    src=~/.ssh/vagrant/id_rsa.pub
+    dest=/home/vagrant/.ssh/
+    owner=vagrant
+    group=vagrant
+    mode=0600

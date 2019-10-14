@@ -1,0 +1,12 @@
+# OS Dust
+.DS_Store
+Thumbs.db
+
+# Vagrant
+.vagrant
+
+# Ansible
+ansible.log
+playbook.retry
+ansible/required-roles
+*.log
